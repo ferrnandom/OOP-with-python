@@ -1,50 +1,33 @@
 #decomponer consiste en decomponer los objetos en 
 #partes mas pequeños
 
-# class Automovil:
-#     def __init__(self, modelo, marca, color):
-#     #variables de instancia
-#         self.modelo = modelo 
-#         self.marca = marca
-#         self.color = color 
-#         self._estado = 'en reposo'
-#         self._motor = Motor(cilindros = 4)
-#     #estas dos ultimas variables son variables privadas
-
-#     def acelerar(self, tipo='despacio'):
-#         if tipo == 'rapida':
-#             self._motor.inyecta_gasolina(10)
-#         else:
-#             self._motor.inyecta_gasolina(3)
-#         self.estado = 'movimiento'
-
-# class Motor:                       #tipo es un default keyword, un parametro por defecto
-#     def __init__(self, cilindros, tipo='gasolina'):
-#         self.cilindros = cilindros
-#         self.tipo = tipo
-#         self._temperatura = 0
-
-
-#     def inyecta_gasolina(self, cantidad):
-#         pass
-
 class Avion:
-    def __init__(self, motores, pasajeros, marca, modelo):
+    def __init__(self, alcance, aerolinea, motores, marca, pasajeros):
+        self.alcance = alcance
+        self.aerolinea = aerolinea
         self.motores = motores
+        self.marca = marca
         self.pasajeros = pasajeros
-        self.marca = marca
-        self.modelo = modelo
+        self._consumo = Consumo('gasolina', 987)
+
+    
+    def repostar(self):
+        if self.pasajeros > 200:
+            return self._consumo.combustible(5465)
+        else:
+            return self._consumo.combustible(65465)
 
 
-    def despegar(self, tipo = 'rapido'):
-        
 
 
+class Consumo:
+    def __init__(self, tipo, cantidad):
+        self.tipo = tipo
+        self.cantidad = cantidad
 
-class Motor:
-    def __init__(self, marca, potencia=alta):
-        self.marca = marca
-        self.potencia = potencia
+    def combustible(self, cantidad):
+        return f'has hechado {cantidad}'
 
-    def repostar(self,cantidad):
-        print('estamos repostando todo')
+
+RyanAir = Avion(987,'Ryanair',2,'Airbus',250)
+print(RyanAir.repostar())
