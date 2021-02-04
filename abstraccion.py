@@ -11,6 +11,11 @@ class Avion:
         #estos son metodos que estan dentro de este metodo
         #se llaman metodos de primera clase y se ejecutan
         #cuando ejecuto al metodo principal
+        self.avisar()
+        self.acelerar()
+        self.levantar()
+        self.estabilizar()
+        self.velocidad_crucero()
         
         return f'hola a todos los pasajeros y gracias por elegir {self.aerolinea} para volar'
 
