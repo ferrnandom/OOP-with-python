@@ -1,30 +1,35 @@
-class Lavadora:
-    def __init__(self):
-        pass
 
-    def lavar(self, temperatura='caliente'):
-        self._llenar_tanque_de_agua(temperatura)
-        self._añadir_jabon()
-        self._lavar()
-        self._centrifugar()
-
-    def _llenar_tanque_de_agua(self, temperatura):
-        return f'llenando agua con la temperatura {temperatura}'
-
-    def _añadir_jabon(self):
-        return 'añadiendo jabon'
+class Avion:
+    def __init__(self, motores, marca, aerolinea, alcance):
+        self.motores = motores
+        self.marca = marca
+        self.aerolinea = aerolinea
+        self.alcance = alcance
     
-    def _lavar(self):
-        return 'lavando'
+    #metodo
+    def despegar(self):
+        #estos son metodos que estan dentro de este metodo
+        #se llaman metodos de primera clase y se ejecutan
+        #cuando ejecuto al metodo principal
+        
+        return f'hola a todos los pasajeros y gracias por elegir {self.aerolinea} para volar'
 
-    def _centrifugar(self):
-        return 'estamos centrifugando tu ropa'
+    def avisar(self):
+        return 'abrochence los cintirones'
+    def acelerar(self):
+        return 'alcanzando velocidad de 290 km/h'
+    def levantar(self):
+        return 'levantando el morro'
+    def estabilizar(self):
+        return 'estabilizando el avion'
+    def velocidad_crucero(self):
+        return 'alcanzando la velocidad crucero'
 
-
-
-if __name__ == "__main__":
-    lavadora = Lavadora()
-    print(lavadora._llenar_tanque_de_agua('fria'))
-    print(lavadora._añadir_jabon())
-    print(lavadora._lavar())
-    print(lavadora._centrifugar())
+if __name__ == '__main__':
+    avioncito = Avion(4,"Boeing","Ryanair", 8786)
+    print(avioncito.despegar())
+    print(avioncito.avisar())
+    print(avioncito.acelerar())
+    print(avioncito.levantar())
+    print(avioncito.estabilizar())
+    print(avioncito.velocidad_crucero())
