@@ -8,12 +8,12 @@ class Avion:
         self.motores = motores
         self.marca = marca
         self.pasajeros = pasajeros
-        self._consumo = Consumo('gasolina', 987)
+        self._consumo = Consumo('gasolina', 987)#este es un objeto
 
     
     def repostar(self):
         if self.pasajeros > 200:
-            return self._consumo.combustible(5465)
+            return self._consumo.combustible(5465)#aqui estoy invocando el metodo del objeto consumo
         else:
             return self._consumo.combustible(65465)
 
